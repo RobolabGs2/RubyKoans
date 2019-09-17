@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Triangle Project Code.
 
 # Triangle analyzes the lengths of the sides of a triangle
@@ -14,6 +16,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  raise TriangleError if a <= 0 || b <= 0 || c <= 0
+  raise TriangleError if a + b <= c || b + c <= a || a + c <= b
+
   ab = a == b
   bc = b == c
   ac = a == c
